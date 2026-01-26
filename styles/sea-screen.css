@@ -1,0 +1,21 @@
+.sea-sky {
+  background: linear-gradient(180deg, #1b84d1 0%, #12629e 45%, #0a3b5f 100%);
+}
+
+.wave-band {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 18%;
+  background: rgba(255, 255, 255, 0.12);
+  filter: blur(1px);
+}
+
+.wave-band:nth-child(2) {
+  top: 55%;
+}
+
+.wave-band:nth-child(3) {
+  top: 70%;
+  opacity: 0.2;
+}

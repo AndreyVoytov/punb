@@ -1,0 +1,82 @@
+:root {
+  color-scheme: light;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background: #05111b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1f4965, #050c16 70%);
+  color: #ffffff;
+}
+
+.game-frame {
+  width: min(92vw, 420px);
+  aspect-ratio: 9 / 16;
+  background: #0c2438;
+  border-radius: 32px;
+  padding: 12px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.frame-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frame-header h1 {
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.frame-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.frame-nav button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.screen-wrapper {
+  flex: 1;
+  background: #0f2c43;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+}
+
+.screen-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ui-badge {
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+@media (min-width: 900px) {
+  .game-frame {
+    width: 460px;
+  }
+}
