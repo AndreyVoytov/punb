@@ -41,15 +41,29 @@
 
     const seaSlot = document.createElement('div');
     seaSlot.className = 'ui-slot';
-    const seaBtn = window.GameUI.createImageElement('seaButton');
-    seaBtn.style.width = '20%';
+    const seaBtn = document.createElement('button');
+    seaBtn.type = 'button';
+    seaBtn.className = 'ui-action-button';
+    const seaImg = window.GameUI.createImageElement('seaButton');
+    seaImg.style.width = '100%';
+    seaBtn.appendChild(seaImg);
+    seaBtn.addEventListener('click', () => {
+      window.GameUI.showToast('Открываем карты маршрутов.');
+    });
     seaSlot.appendChild(seaBtn);
     seaSlot.appendChild(document.createElement('span')).textContent = 'Карты';
 
     const islandSlot = document.createElement('div');
     islandSlot.className = 'ui-slot';
-    const islandBtn = window.GameUI.createImageElement('islandButton');
-    islandBtn.style.width = '20%';
+    const islandBtn = document.createElement('button');
+    islandBtn.type = 'button';
+    islandBtn.className = 'ui-action-button';
+    const islandImg = window.GameUI.createImageElement('islandButton');
+    islandImg.style.width = '100%';
+    islandBtn.appendChild(islandImg);
+    islandBtn.addEventListener('click', () => {
+      window.GameUI.showToast('Курс на ближайший порт.');
+    });
     islandSlot.appendChild(islandBtn);
     islandSlot.appendChild(document.createElement('span')).textContent = 'Порт';
 

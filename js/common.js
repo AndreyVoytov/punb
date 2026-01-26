@@ -55,9 +55,37 @@
     return badge;
   }
 
+  let toastTimeout;
+  let toastElement;
+
+  function showToast(message, rootElement = document.getElementById('screen-root')) {
+    const root = rootElement || document.body;
+    if (!root) {
+      return;
+    }
+
+    if (!toastElement) {
+      toastElement = document.createElement('div');
+      toastElement.className = 'ui-toast';
+      toastElement.setAttribute('role', 'status');
+      toastElement.setAttribute('aria-live', 'polite');
+      root.appendChild(toastElement);
+    }
+
+    toastElement.textContent = message;
+    toastElement.classList.add('is-visible');
+    if (toastTimeout) {
+      window.clearTimeout(toastTimeout);
+    }
+    toastTimeout = window.setTimeout(() => {
+      toastElement.classList.remove('is-visible');
+    }, 2000);
+  }
+
   window.GameUI = {
     createImageElement,
     setPercentPosition,
-    createBadge
+    createBadge,
+    showToast
   };
 })();

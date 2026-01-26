@@ -65,15 +65,29 @@
 
     const actionSlot = document.createElement('div');
     actionSlot.className = 'ui-slot';
-    const actionBtn = window.GameUI.createImageElement('actionButton');
-    actionBtn.style.width = '18%';
+    const actionBtn = document.createElement('button');
+    actionBtn.type = 'button';
+    actionBtn.className = 'ui-action-button';
+    const actionImg = window.GameUI.createImageElement('actionButton');
+    actionImg.style.width = '100%';
+    actionBtn.appendChild(actionImg);
+    actionBtn.addEventListener('click', () => {
+      window.GameUI.showToast('Экспедиция готовится!');
+    });
     actionSlot.appendChild(actionBtn);
     actionSlot.appendChild(document.createElement('span')).textContent = 'Экспедиция';
 
     const compassSlot = document.createElement('div');
     compassSlot.className = 'ui-slot';
-    const compassBtn = window.GameUI.createImageElement('compassButton');
-    compassBtn.style.width = '14%';
+    const compassBtn = document.createElement('button');
+    compassBtn.type = 'button';
+    compassBtn.className = 'ui-action-button';
+    const compassImg = window.GameUI.createImageElement('compassButton');
+    compassImg.style.width = '100%';
+    compassBtn.appendChild(compassImg);
+    compassBtn.addEventListener('click', () => {
+      window.GameUI.showToast('Навигация обновлена.');
+    });
     compassSlot.appendChild(compassBtn);
     compassSlot.appendChild(document.createElement('span')).textContent = 'Навигация';
 
