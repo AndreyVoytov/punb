@@ -11,6 +11,21 @@
   inset: 0;
 }
 
+.screen-layer--background {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.screen-layer--scene {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.screen-layer--ui {
+  z-index: 3;
+  pointer-events: auto;
+}
+
 .screen-layer > img {
   position: absolute;
   height: auto;

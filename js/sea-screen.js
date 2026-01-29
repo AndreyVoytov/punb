@@ -77,13 +77,13 @@
     root.classList.add('sea-sky');
 
     const backgroundLayer = document.createElement('div');
-    backgroundLayer.className = 'screen-layer';
+    backgroundLayer.className = 'screen-layer screen-layer--background';
 
     const midLayer = document.createElement('div');
-    midLayer.className = 'screen-layer';
+    midLayer.className = 'screen-layer screen-layer--scene';
 
     const uiLayer = document.createElement('div');
-    uiLayer.className = 'screen-layer';
+    uiLayer.className = 'screen-layer screen-layer--ui';
 
     renderBackground(backgroundLayer);
     renderWaves(midLayer);
